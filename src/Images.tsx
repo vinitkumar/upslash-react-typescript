@@ -21,7 +21,7 @@ interface IImage {
 
 const Image: React.FC<IImage> = (props) => {
   return (
-    <img src={props.urls.raw}/>
+    <img src={props.image.urls.raw}/>
   );
 
 };
