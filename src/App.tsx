@@ -8,6 +8,7 @@ const API_URL = `https://api.unsplash.com/photos/?client_id=0a52c7eede6320232b60
 type ImgValue = {
   urls: {raw: string, thumb: string},
   alt_description: string,
+  id: string,
 
 }
 
@@ -17,7 +18,6 @@ const App: React.FunctionComponent = () => {
   useEffect(() => {
     let data = GetData(API_URL);
     data.then((images:any) => {
-      console.log("DO I have any data here", images);
       setImageData(images);
     });
     return () => {
@@ -29,7 +29,7 @@ const App: React.FunctionComponent = () => {
       <h1> Image loading component trial </h1>
       <div className="image-container">
         {imageData && imageData.map((value: ImgValue, key) => {
-          return <img src={value.urls.thumb} alt={value.alt_description} key={String(key)}/>
+          return <img src={value.urls.thumb} alt={value.alt_description} key={String(key)} id={value.id} />
         })}
       </div>
       <FaBackward />
