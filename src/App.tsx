@@ -1,6 +1,5 @@
 import React, {useState, useEffect, FunctionComponent} from 'react';
-import logo from './logo.svg';
-import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa";
+import { FaForward, FaBackward } from "react-icons/fa";
 import './App.css';
 import GetData from './Api';
 
@@ -16,12 +15,7 @@ type ImgValue = {
 
 }
 
-const getDimension = () => {
-  return {width: window.innerWidth, height: window.innerHeight};
-}
-
-
-const App: React.FunctionComponent = () => {
+const App: FunctionComponent = () => {
   // console.log(GetData(API_URL));
   function getImage(event: React.MouseEvent) {
     if (event.target) {
